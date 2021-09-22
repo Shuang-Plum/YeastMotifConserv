@@ -88,8 +88,9 @@ zgentropy<-function(gvec,gap.pen) {
 
 phylo_ZOOM<-function(ali,refstr,tree,gap.pen) {
   
-  mscore<-0
+  if (refstr=='S288C') {refstr<-'STC'}
   
+  mscore<-0
   
   # check if ali has the same num of strains as in tree
   if (length(ali)==nrow(tree) & nrow(tree)==(ncol(tree)+1) & length(names(ali))==nrow(tree)) {

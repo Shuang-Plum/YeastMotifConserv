@@ -10,6 +10,8 @@ source('./Codes/phylo_M.R')
 # full phylo score takes significantly long time ~3-5min per site
 ProConserve<-function(sm.res, refstr, gap.pen=T, phyloFull=F) {
   
+if (refstr=='S288C') {refstr<-'STC'}
+  
   if (length(sm.res)>0) {
     # load predefined data
     # using BLOSUM62 dist and submat - can change to PAM30 if needed
@@ -21,9 +23,14 @@ ProConserve<-function(sm.res, refstr, gap.pen=T, phyloFull=F) {
     
     # get the properties
     #sm.res<-sm.res.list$sm.res
+    
     ref.col<-which(colnames(sm.res)==refstr)
     procon<-sm.res[,c(1:2,ref.col,3)]
     procon$group<-paste0('Match_',procon$group)
+    
+    if (colnames(procon)[3]=='STC') {
+      colnames(procon)[3]<-'S288C'
+    }
     
     # adding cols of algos
     procon$SubMatrix<-NA

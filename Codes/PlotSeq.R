@@ -31,6 +31,7 @@ PlotSeq<-function(refseq,refstr,sm.res) {
   #refseq.spl<-strsplit(refseq, "(?<=.{30})", perl = TRUE)[[1]]
   
   # define x and y pos for each aas in refseq
+  if (refstr=='S288C') {refstr<-'STC'}
   
   naas<-50
   

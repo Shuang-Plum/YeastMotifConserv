@@ -5,14 +5,20 @@
 source('./Codes/SymbolFreq.R')
 Symfreq_table<-function(refstr,sm.res) {
   
+  if (refstr=='S288C') {refstr<-'STC'}
   
   if (length(sm.res)>0) {
     
     # get the properties
     #sm.res<-sm.res.list$sm.res
+    
     ref.col<-which(colnames(sm.res)==refstr)
     symfreq<-sm.res[,c(1:2,ref.col,3)]
     symfreq$group<-paste0('Match_',symfreq$group)
+    
+    if (colnames(symfreq)[3]=='STC') {
+      colnames(symfreq)[3]<-'S288C'
+    }
     
     # add cols of each aas 
     aa<-c('A','R','N','D','C','Q','E','G','H','I','L','K','M','F','P','S','T',

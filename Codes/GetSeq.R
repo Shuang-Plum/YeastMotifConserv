@@ -11,6 +11,8 @@ GetSeq<-function(gene,refstr,co_filep){
   # replace S288C to STC to be consistent
   snames<-gsub('S288C','STC',snames)
   
+  if(refstr=='S288C') {refstr<-'STC'}
+  
   refseq<-getSequence(co[which(snames==refstr)],as.string = F)
   
   refseq<-unlist(refseq)
