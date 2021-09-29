@@ -28,7 +28,7 @@ ui <- fluidPage(
   #shinythemes::themeSelector(), # set theme selector
   theme = shinytheme("flatly"),
   
-  titlePanel("Yeast CoSMoS - Yeast Conserved Sequence Motif Search",
+  titlePanel(title=span(img(src="icon1.jpg"),tags$p(HTML(paste0(strong("Yeast CoSMoS"), " - ", strong("Yeast Co"),"nserved ",strong("S"),"equence ",strong("Mo"),"tif ",strong("S"),"earch")))),
              windowTitle = "YeastMotifConserv"), # set title and tab title
   fluidRow(column(12,
                   h4('This algorithm can be used to search for and identify motifs conserved in the 1002 yeast genome project.')
@@ -215,7 +215,7 @@ ui <- fluidPage(
                 ),
                 tabPanel("Citation",
                          br(),
-                         tags$p('Please cite Li and Dohlman for the usage of this webiste.')
+                         tags$p('Please cite Shuang Li and Henrik G. Dohlman, personal communication. shuang9@email.unc.edu; hdohlman@med.unc.edu.')
                   
                 )
               )
