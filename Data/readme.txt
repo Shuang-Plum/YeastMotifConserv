@@ -1,2 +1,0 @@
-in yeast there are 550 pairs of paralogs (1097 orfs)
-here only includes 479 pairs (958 orfs) that both para1 and para2 are within the 5776 orfs that are within 1012 MSA and have conserved score calculations.
