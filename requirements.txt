@@ -1,0 +1,6 @@
+seqinr
+DT
+shiny
+shinythemes
+shinycssloaders
+ggplot2
